@@ -1,7 +1,7 @@
 Material Mod
 ===========
 
-A mod for the popular game Minecraft. Adds many different materials, including ores and their respective tools, and more. Also notable is craftable bedrock and sponge!
+A mod for the popular game Minecraft. Adds many different materials, including ores and their respective tools, and more. Also notable is craftable bedrock and sponge! The mod is server compatible as well, though it requires the client to have the mod.
 
 Installation
 ------------
