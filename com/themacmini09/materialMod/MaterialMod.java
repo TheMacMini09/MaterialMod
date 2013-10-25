@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
@@ -20,7 +21,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="TheMacMini09_MaterialMod", name="Material Mod", version="0.0.1")
+@Mod(modid="TheMacMini09_MaterialMod", name="Material Mod", version="0.0.2")
 @NetworkMod(clientSideRequired=true)
 public class MaterialMod {
 	
@@ -56,9 +57,6 @@ public class MaterialMod {
         @EventHandler
         public void load(FMLInitializationEvent event) {
                 proxy.registerRenderers();
-
-                
-                
                 
                 //recipes
                 GameRegistry.addRecipe(new ItemStack(Block.sponge), "GDG", "DWD", "GDG",
@@ -66,6 +64,8 @@ public class MaterialMod {
                 
                 GameRegistry.addRecipe(new ItemStack(Block.bedrock), "OOO", "OOO", "OOO",
                         'O', Block.obsidian);
+                
+                GameRegistry.addSmelting(MaterialMod.tinOre.blockID, new ItemStack(MaterialMod.tinIngot), 0.5F);
                 
                 //Ore pickaxe stuff
                 
@@ -75,6 +75,7 @@ public class MaterialMod {
                 LanguageRegistry.addName(pointyStick, "Pointy Stick");
                 LanguageRegistry.instance().addStringLocalization("itemGroup.materialTab", "en_US", "All of Material Mod's stuff.");
                 LanguageRegistry.addName(tinOre, "Tin Ore");
+                LanguageRegistry.addName(tinIngot, "Tin Ingot");
                 
                 //Game registry
                 GameRegistry.registerBlock(tinOre, "tinOre");
